@@ -1,0 +1,10 @@
+{
+  "description": "A centralized platform for NW AX 추진팀, enabling users to submit requests, access guides, and utilize AI support for efficient RPA operations.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

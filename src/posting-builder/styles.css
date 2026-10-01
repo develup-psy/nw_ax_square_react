@@ -1,0 +1,1561 @@
+@font-face {
+  font-family: 'NWAX LG Smart';
+  src: url('../assets/fonts/LG_Smart_UI-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NWAX LG Smart';
+  src: url('../assets/fonts/LG_Smart_UI-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NWAX LG Smart';
+  src: url('../assets/fonts/LG_Smart_UI-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NWAX LG Smart';
+  src: url('../assets/fonts/LG_Smart_UI-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard Std';
+  src: url('../assets/fonts/PretendardStd-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard Std';
+  src: url('../assets/fonts/PretendardStd-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard Std';
+  src: url('../assets/fonts/PretendardStd-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard Std';
+  src: url('../assets/fonts/PretendardStd-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard Std';
+  src: url('../assets/fonts/PretendardStd-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard Std';
+  src: url('../assets/fonts/PretendardStd-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard Std';
+  src: url('../assets/fonts/PretendardStd-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard Std';
+  src: url('../assets/fonts/PretendardStd-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard Std';
+  src: url('../assets/fonts/PretendardStd-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.posting-builder-root {
+  --nwax-font-family: 'Pretendard Std', 'NWAX LG Smart', 'Malgun Gothic', sans-serif;
+  --fontFamilyBase: var(--nwax-font-family);
+  --fontFamilyNumeric: var(--nwax-font-family);
+
+  width: 100%;
+  height: 100vh;
+  min-height: 680px;
+  overflow: hidden;
+  color: #1f1b20;
+  background: #eceef3;
+  font-family: var(--nwax-font-family);
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+}
+
+.posting-builder-root,
+.posting-builder-root *,
+.posting-builder-root *::before,
+.posting-builder-root *::after {
+  box-sizing: border-box;
+}
+
+.posting-builder-root button,
+.posting-builder-root input,
+.posting-builder-root textarea,
+.posting-builder-root select {
+  font-family: inherit;
+}
+
+.posting-builder-root button { border: 0; }
+.posting-builder-root button,
+.posting-builder-root label.file-button { user-select: none; }
+
+.app-shell { height: 100%; display: flex; flex-direction: column; background: #eef0f4; }
+.topbar {
+  height: 66px; flex: 0 0 66px; display: flex; align-items: center; gap: 24px;
+  padding: 0 18px; border-bottom: 1px solid #e0e2e8; background: rgba(255,255,255,.96);
+  backdrop-filter: blur(14px); position: relative; z-index: 20;
+}
+.brand-block { width: 258px; display: flex; align-items: center; gap: 10px; }
+.brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; background: #111116; color: white; }
+.brand-block > div:last-child { display: flex; flex-direction: column; line-height: 1.05; }
+.brand-block strong { font-size: 14px; letter-spacing: -.02em; }
+.brand-block span { margin-top: 5px; font-size: 10px; color: #86848c; letter-spacing: .08em; text-transform: uppercase; }
+.project-title-control { min-width: 280px; display: flex; align-items: center; gap: 9px; }
+.project-title-control > span { font-size: 9px; font-weight: 800; color: #9a98a0; letter-spacing: .12em; }
+.project-title-control input { border: 0; outline: 0; background: transparent; min-width: 220px; font-size: 13px; font-weight: 700; color: #1d1c21; }
+.topbar-actions { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+.ghost-button, .primary-button, .secondary-button, .section-action-row button {
+  height: 34px; padding: 0 12px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center;
+  gap: 6px; cursor: pointer; font-size: 11px; font-weight: 700; transition: .15s ease;
+}
+.ghost-button { color: #424048; background: #f5f5f7; border: 1px solid #e6e6ea; }
+.ghost-button:hover { background: #ececf1; }
+.primary-button { color: white; background: #111116; padding-inline: 14px; }
+.primary-button:hover { background: #292830; transform: translateY(-1px); }
+.primary-button:disabled { opacity: .55; cursor: wait; transform: none; }
+.file-button { position: relative; overflow: hidden; }
+.file-button input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
+.workspace { flex: 1; min-height: 0; display: grid; grid-template-columns: 286px minmax(0, 1fr) 326px; }
+.left-sidebar, .inspector-panel { background: #fff; min-height: 0; position: relative; z-index: 5; }
+.left-sidebar { border-right: 1px solid #e0e2e8; }
+.left-sidebar-scroll, .inspector-scroll { height: 100%; overflow-y: auto; overscroll-behavior: contain; }
+.left-sidebar-scroll { padding: 16px 12px 24px; }
+.sidebar-section + .sidebar-section { margin-top: 22px; }
+.panel-heading { display: flex; align-items: end; justify-content: space-between; padding: 0 4px 10px; }
+.panel-heading.compact { align-items: center; }
+.eyebrow { font-size: 9px; line-height: 1; font-weight: 800; letter-spacing: .13em; color: #9b99a1; }
+.panel-heading h2, .inspector-title-block h2 { margin: 5px 0 0; font-size: 14px; letter-spacing: -.03em; }
+.count-badge { min-width: 23px; height: 20px; padding: 0 7px; display: grid; place-items: center; background: #f1f1f4; color: #76747c; border-radius: 99px; font-size: 10px; font-weight: 800; }
+.section-library-grid { display: grid; gap: 7px; }
+.section-library-item {
+  width: 100%; min-height: 68px; padding: 10px; display: grid; grid-template-columns: 34px minmax(0,1fr) 18px; gap: 9px; align-items: center;
+  text-align: left; background: #fafafd; border: 1px solid #ececf1; border-radius: 11px; cursor: pointer; color: #242329;
+  transition: .15s ease;
+}
+.section-library-item:hover { border-color: #ff82bd; background: #fff7fb; transform: translateY(-1px); }
+.section-library-icon { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; background: #fff; border: 1px solid #ededf1; color: #ff2e98; }
+.section-library-copy { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.section-library-copy strong { font-size: 11px; }
+.section-library-copy small { color: #86848c; font-size: 9px; line-height: 1.35; }
+.section-library-plus { color: #aaa8b0; }
+
+.outline-list { display: flex; flex-direction: column; gap: 5px; }
+.outline-item {
+  height: 39px; border-radius: 9px; padding: 0 7px 0 4px; display: grid; align-items: center;
+  grid-template-columns: 24px 24px 24px minmax(0,1fr) auto; border: 1px solid transparent; color: #57545c; background: transparent; cursor: pointer;
+}
+.outline-item:hover { background: #f7f7fa; }
+.outline-item.is-selected { color: #22171c; background: #fff2f8; border-color: #ffd1e7; }
+.outline-item.is-dragging { opacity: .55; background: #fff; box-shadow: 0 8px 18px rgba(0,0,0,.08); }
+.drag-handle { height: 28px; display: grid; place-items: center; background: transparent; color: #aaa8b0; cursor: grab; }
+.drag-handle:active { cursor: grabbing; }
+.outline-index { font-size: 9px; font-weight: 800; color: #aaa8b0; }
+.outline-type-icon { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 6px; background: #fff; border: 1px solid #ececf1; color: #ff2e98; }
+.outline-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; font-weight: 700; }
+.outline-actions { display: flex; opacity: 0; transition: .12s; }
+.outline-item:hover .outline-actions, .outline-item.is-selected .outline-actions { opacity: 1; }
+.outline-actions button { width: 23px; height: 23px; display: grid; place-items: center; background: transparent; color: #88868e; border-radius: 6px; cursor: pointer; }
+.outline-actions button:hover { background: #ececf1; color: #242329; }
+.outline-empty { margin: 6px 4px; padding: 18px 10px; text-align: center; color: #aaa8b0; font-size: 10px; line-height: 1.6; border: 1px dashed #dedee5; border-radius: 10px; }
+
+.preview-workspace { min-width: 0; min-height: 0; display: flex; flex-direction: column; background: #eceef3; }
+.preview-toolbar { height: 52px; flex: 0 0 52px; padding: 0 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #dde0e6; background: #f7f8fa; }
+.preview-toolbar > div:first-child { display: flex; flex-direction: column; gap: 3px; }
+.preview-toolbar strong { font-size: 11px; color: #4f4d55; }
+.zoom-control { display: flex; align-items: center; gap: 7px; color: #77757d; font-size: 10px; font-weight: 700; }
+.zoom-control button { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 7px; background: #fff; border: 1px solid #dedfe5; color: #5c5961; cursor: pointer; }
+.zoom-control span { min-width: 34px; text-align: center; }
+.preview-scroll { flex: 1; min-height: 0; overflow: auto; padding: 30px 38px 90px; }
+.canvas-stage { width: 960px; margin: 0 auto; transition: transform .15s ease; }
+.canvas-shadow { width: 960px; box-shadow: 0 18px 60px rgba(19,18,24,.13); }
+.page-canvas { width: 960px; min-height: 900px; background: var(--theme-bg); color: var(--theme-text); font-family: var(--font-family); letter-spacing: var(--letter-spacing); font-weight: var(--font-weight); overflow: hidden; word-break: break-all; overflow-wrap: anywhere; line-break: anywhere; }
+.preview-section { position: relative; cursor: pointer; transition: box-shadow .15s ease; isolation: isolate; }
+.preview-section.is-selected { z-index: 2; box-shadow: none; }
+.preview-section .section-block { padding-top: var(--section-padding-top, var(--page-padding-top)); padding-bottom: var(--section-padding-bottom, var(--page-padding-bottom)); background: var(--section-background, var(--theme-bg)); }
+.empty-canvas { min-height: 900px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 100px; background: linear-gradient(180deg, #fff, #fbfbfd); }
+.empty-canvas-icon { width: 66px; height: 66px; display: grid; place-items: center; border-radius: 18px; color: #ff2e98; background: #fff0f7; border: 1px solid #ffd5e8; margin-bottom: 22px; }
+.empty-canvas h2 { margin: 10px 0 10px; font-size: 28px; letter-spacing: -.04em; }
+.empty-canvas p { margin: 0; max-width: 520px; color: #7e7b84; line-height: 1.7; font-size: 14px; }
+
+.inspector-panel { border-left: 1px solid #e0e2e8; display: flex; flex-direction: column; }
+.inspector-tabs { flex: 0 0 49px; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #e5e5ea; }
+.inspector-tabs button { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 10px; font-weight: 800; color: #89878f; background: #fff; border-bottom: 2px solid transparent; cursor: pointer; }
+.inspector-tabs button.is-active { color: #ff2e98; border-bottom-color: #ff2e98; }
+.inspector-scroll { padding: 16px 14px 32px; }
+.inspector-title-block { padding: 2px 2px 11px; }
+.inspector-title-block p { margin: 6px 0 0; color: #8c8992; font-size: 10px; line-height: 1.5; }
+.section-action-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-bottom: 13px; }
+.section-action-row button { height: 31px; padding: 0 5px; font-size: 9px; background: #f6f6f8; border: 1px solid #e9e9ed; color: #55535b; }
+.section-action-row button:hover { background: #eeeeF2; }
+.section-action-row button.danger { color: #d63861; }
+.markdown-help { margin-bottom: 14px; padding: 8px 9px; border-radius: 8px; background: #f8f8fa; color: #838088; font-size: 9px; line-height: 1.65; }
+.markdown-help code { color: #ff2e98; font-family: inherit; font-weight: 700; margin-right: 4px; }
+.inspector-empty { min-height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; color: #aaa8b0; }
+.inspector-empty strong { color: #68666e; font-size: 12px; }
+.inspector-empty span { max-width: 220px; font-size: 10px; line-height: 1.6; }
+.inspector-section-title { margin-bottom: 10px; font-size: 9px; font-weight: 900; color: #77747d; letter-spacing: .12em; text-transform: uppercase; }
+.inspector-divider { height: 1px; background: #ececf0; margin: 16px 0; }
+
+.field-group { margin-bottom: 12px; }
+.field-label-row { min-height: 18px; display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 5px; }
+.field-label { color: #55525a; font-size: 9px; font-weight: 800; letter-spacing: .015em; }
+.field-hint { color: #ff2e98; font-size: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
+.control-input { width: 100%; min-height: 34px; padding: 8px 9px; outline: 0; border: 1px solid #e4e4e9; border-radius: 8px; background: #f7f7f9; color: #27262b; font-size: 10px; line-height: 1.45; transition: .12s; }
+.control-input:focus { background: #fff; border-color: #ff74b6; box-shadow: 0 0 0 3px #fff0f7; }
+.control-textarea { min-height: 66px; resize: vertical; }
+.control-select { appearance: auto; }
+.color-control { display: grid; grid-template-columns: 38px minmax(0,1fr); gap: 7px; }
+.color-picker { width: 38px; height: 34px; padding: 3px; background: #f7f7f9; border: 1px solid #e4e4e9; border-radius: 8px; cursor: pointer; }
+.toggle-row { min-height: 36px; padding: 0 2px; display: flex; align-items: center; justify-content: space-between; font-size: 10px; color: #59565f; font-weight: 700; cursor: pointer; }
+.toggle { width: 34px; height: 20px; position: relative; display: inline-flex; border-radius: 99px; background: #c8c7cd; transition: .18s; }
+.toggle input { position: absolute; opacity: 0; pointer-events: none; }
+.toggle-knob { width: 16px; height: 16px; border-radius: 50%; position: absolute; left: 2px; top: 2px; background: white; box-shadow: 0 1px 4px rgba(0,0,0,.18); transition: .18s; }
+.toggle.is-on { background: #ff2e98; }
+.toggle.is-on .toggle-knob { transform: translateX(14px); }
+.image-upload { height: 76px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 1px dashed #cbc9d1; border-radius: 9px; color: #8d8a93; background: #fafafd; font-size: 9px; font-weight: 700; cursor: pointer; }
+.image-upload:hover { border-color: #ff74b6; color: #ff2e98; background: #fff8fb; }
+.image-upload input { display: none; }
+.image-field-preview { overflow: hidden; border: 1px solid #e3e3e8; border-radius: 9px; background: #f7f7f9; }
+.image-field-preview img { width: 100%; height: 116px; display: block; object-fit: cover; }
+.image-remove { width: 100%; height: 29px; display: flex; align-items: center; justify-content: center; gap: 5px; background: #fff; color: #d63861; font-size: 9px; font-weight: 800; cursor: pointer; }
+.repeater-card { margin-bottom: 9px; padding: 10px 9px 2px; border: 1px solid #e8e8ed; border-radius: 10px; background: #fbfbfd; }
+.repeater-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 9px; }
+.repeater-head strong { font-size: 9px; color: #77747d; }
+.icon-text-button { display: inline-flex; align-items: center; gap: 4px; padding: 4px 6px; border-radius: 6px; background: transparent; font-size: 8px; font-weight: 800; cursor: pointer; }
+.icon-text-button.danger { color: #d63861; }
+.secondary-button { background: #f4f4f7; color: #55525b; border: 1px solid #e4e4e8; }
+.secondary-button:hover { background: #ececf1; }
+.secondary-button.full { width: 100%; }
+.preset-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.preset-card { min-height: 76px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 9px; border: 1px solid #e7e7ec; border-radius: 10px; background: #fafafd; text-align: left; cursor: pointer; }
+.preset-card:hover, .preset-card.is-active { border-color: #ff8ac1; background: #fff7fb; }
+.preset-card strong { font-size: 9px; line-height: 1.35; color: #504e56; }
+.preset-swatches { display: flex; gap: 4px; }
+.preset-swatches i { width: 18px; height: 18px; border-radius: 50%; border: 1px solid rgba(0,0,0,.07); }
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 100; padding: 10px 15px; border-radius: 10px; background: #18171c; color: white; font-size: 11px; font-weight: 700; box-shadow: 0 10px 30px rgba(0,0,0,.2); }
+
+/* Preview document system */
+.section-block { padding: var(--section-padding-top, var(--page-padding-top)) 0 var(--section-padding-bottom, var(--page-padding-bottom)); }
+.section-inner { width: min(var(--section-width), calc(100% - 72px)); margin: 0 auto; }
+.section-heading { width: 100%; max-width: none; display: grid; gap: 0; margin-bottom: 0; }
+.section-heading.is-center { text-align: center; margin-left: auto; margin-right: auto; }
+.markdown > :first-child { margin-top: 0 !important; }
+.markdown > :last-child { margin-bottom: 0 !important; }
+.markdown em { font-style: italic; }
+.markdown code { padding: .1em .35em; border-radius: 5px; background: var(--theme-primary-soft); color: inherit; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+.markdown blockquote { margin: 14px 0; padding: 10px 16px; border-left: 3px solid var(--theme-primary); background: var(--theme-primary-soft); color: inherit; }
+.markdown hr { height: 1px; border: 0; background: rgba(100, 98, 107, .2); margin: 20px 0; }
+.markdown ul, .markdown ol { padding-left: 1.3em; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,10,14,.82), rgba(10,10,14,.48) 60%, rgba(10,10,14,.18)); }
+.hero-inner { position: relative; z-index: 1; }
+
+.intro-grid, .feature-grid { display: grid; gap: var(--gap); }
+.feature-grid { grid-template-columns: repeat(var(--grid-columns, 3), minmax(0, 1fr)); }
+.intro-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.content-card { min-width: 0; padding: calc(var(--gap) * 1.2); border-radius: var(--card-radius); border: 0; background: var(--theme-bg); box-shadow: 0 5px 20px rgba(24,23,29,.035); }
+.section-icon-badge { width: 40px; min-width: 40px; height: 40px; padding: 0 8px; display: inline-flex; align-items: center; justify-content: center; border-radius: 11px; margin-bottom: 18px; background: var(--theme-primary); color: white; font-size: calc(11px * var(--font-scale)); font-weight: var(--accent-weight); letter-spacing: -.02em; }
+.before-after-grid { display: grid; grid-template-columns: minmax(0,1fr) 46px minmax(0,1fr); align-items: stretch; }
+.before-after-card { padding: calc(var(--gap) * 1.35); border-radius: var(--card-radius); border: 0; background: var(--compare-card-background, var(--theme-bg)); }
+.after-card { border-color: var(--theme-primary-soft); }
+.compare-label { display: inline-block; margin-bottom: 20px; font-size: var(--element-font-size, calc(10px * var(--font-scale))); line-height: var(--element-line-height, 1.2); color: var(--element-color, var(--theme-muted)); font-weight: var(--element-font-weight, var(--accent-weight)); letter-spacing: .12em; }
+
+.compare-arrow { display: grid; place-items: center; color: var(--theme-primary); font-size: 28px; font-weight: var(--heading-weight); }
+
+.feature-card { min-height: 190px; }
+.feature-card .section-icon-badge { background: var(--theme-primary-soft); color: var(--theme-primary); }
+
+.faq-list { display: grid; gap: 11px; }
+.faq-item { display: grid; grid-template-columns: 58px minmax(0,1fr); gap: 16px; padding: 22px 24px; border: 0; border-radius: var(--card-radius); background: var(--theme-bg); }
+.faq-index { padding-top: 2px; font-size: calc(11px * var(--font-scale)); font-weight: var(--accent-weight); color: var(--theme-primary); letter-spacing: .08em; }
+.guide-list { display: grid; gap: var(--gap); }
+.guide-list.is-horizontal { grid-template-columns: repeat(var(--guide-columns, 3), minmax(0, 1fr)); }
+.guide-list.is-vertical { grid-template-columns: 1fr; }
+.guide-step { position: relative; min-height: 180px; padding: calc(var(--gap) * 1.25); border-radius: var(--card-radius); border: 0; background: var(--theme-bg); overflow: hidden; }
+.guide-step::after { content: ''; position: absolute; right: -34px; bottom: -42px; width: 110px; height: 110px; border-radius: 50%; background: var(--theme-primary-soft); }
+.guide-list.is-vertical .guide-step { min-height: 0; display: grid; grid-template-columns: 100px minmax(0,1fr); gap: 0 24px; align-items: start; }
+.guide-list.is-vertical .guide-step .step-number { grid-row: 1 / span 2; }
+.step-number { margin-bottom: 22px; font-size: var(--element-font-size, calc(10px * var(--font-scale))); line-height: var(--element-line-height, 1.2); color: var(--element-color, var(--theme-primary)); font-weight: var(--element-font-weight, var(--accent-weight)); letter-spacing: .12em; }
+
+
+@media (max-width: 1220px) {
+  .workspace { grid-template-columns: 250px minmax(0,1fr) 300px; }
+  .brand-block { width: 220px; }
+  .project-title-control { min-width: 200px; }
+}
+
+/* ===== NW AX Square Studio v2 overrides ===== */
+.preview-section.is-dragging { z-index: 6; opacity: .78; box-shadow: 0 18px 46px rgba(19,18,24,.16); }
+.preview-drag-handle {
+  position: absolute; top: 12px; right: 12px; z-index: 12; height: 30px; padding: 0 9px;
+  display: inline-flex; align-items: center; gap: 4px; border-radius: 8px;
+  background: rgba(22,21,26,.84); color: #fff; font-size: 9px; font-weight: 800;
+  opacity: 0; transform: translateY(-3px); transition: .15s ease; cursor: grab; touch-action: none;
+  box-shadow: 0 5px 14px rgba(0,0,0,.16);
+}
+.preview-section:hover .preview-drag-handle,
+.preview-section.is-selected .preview-drag-handle { opacity: 1; transform: translateY(0); }
+.preview-drag-handle:active { cursor: grabbing; }
+.page-canvas.is-exporting .preview-drag-handle { display: none !important; }
+
+/* Markdown은 파싱뿐 아니라 제목 단계가 시각적으로 구분되도록 표현합니다. */
+.markdown ul, .markdown ol { margin: .55em 0 .8em; }
+.markdown li + li { margin-top: .25em; }
+
+.guide-list.is-horizontal { grid-template-columns: repeat(var(--guide-columns, 3), minmax(0,1fr)); }
+.guide-step-meta { position: relative; z-index: 1; min-height: 44px; display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 18px; }
+.guide-step-meta .section-icon-badge { margin-bottom: 0; }
+.guide-step-meta .step-number { margin: 4px 0 0 auto; }
+.guide-step > .md-card-title, .guide-step > .md-card-description { position: relative; z-index: 1; }
+.guide-list.is-vertical .guide-step { grid-template-columns: 130px minmax(0,1fr); }
+.guide-list.is-vertical .guide-step-meta { grid-row: 1 / span 2; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; }
+.guide-list.is-vertical .guide-step-meta .step-number { margin: 0; }
+
+/* GFM Markdown 표 */
+.markdown table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+.markdown th, .markdown td { padding: 13px 15px; border: 1px solid rgba(115,112,122,.18); text-align: left; vertical-align: top; }
+.markdown th { background: var(--theme-primary-soft); color: inherit; font-weight: var(--element-font-weight, 700); }
+.markdown tbody tr:nth-child(even) td { background: var(--theme-primary-soft-2); }
+.markdown td code { white-space: nowrap; }
+.posting-table-wrap { overflow: hidden; border: 0; border-radius: var(--card-radius); background: var(--theme-bg); }
+.posting-table-wrap .markdown { overflow-x: auto; }
+.posting-table-wrap table { border: 0; }
+.posting-table-wrap th:first-child, .posting-table-wrap td:first-child { border-left: 0; }
+.posting-table-wrap th:last-child, .posting-table-wrap td:last-child { border-right: 0; }
+.posting-table-wrap thead tr:first-child th { border-top: 0; }
+.posting-table-wrap tbody tr:last-child td { border-bottom: 0; }
+.table-markdown-tip { display: grid; gap: 5px; margin-top: -2px; padding: 10px; border-radius: 9px; background: #f7f7fa; color: #85828b; font-size: 9px; }
+.table-markdown-tip strong { color: #5b5961; }
+.table-markdown-tip code { display: block; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: #6d6872; }
+
+/* 이미지 섹션 */
+.image-section { overflow: hidden; }
+.posting-image-figure { margin: 0; }
+.posting-image-figure.is-full { width: 100%; }
+.posting-image-frame { width: 100%; min-height: 180px; aspect-ratio: var(--image-aspect-ratio, auto); overflow: hidden; border-radius: var(--card-radius); background: var(--theme-surface); border: 0; }
+.posting-image-figure.is-full .posting-image-frame { border-left: 0; border-right: 0; border-radius: 0; }
+.posting-image-frame img { width: 100%; height: 100%; display: block; object-fit: var(--image-fit, cover); }
+.posting-image-frame.is-empty { position: relative; }
+.posting-image-frame.is-empty.is-auto { min-height: 220px; }
+.posting-image-empty { position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 16px; text-align: center; color: var(--theme-muted); background: linear-gradient(135deg, var(--theme-surface), var(--theme-primary-soft-2)); }
+.image-caption { margin-top: 10px; }
+.image-caption p { margin: 0; }
+.posting-image-frame.is-auto img { height: auto; object-fit: contain !important; }
+
+/* ===== NW AX Square Studio v3 controls / export parity ===== */
+/* 위/아래 여백을 독립적으로 제어합니다. */
+
+/* 자식 margin collapse가 Preview와 html-to-image에서 다르게 계산되는 것을 방지합니다. */
+.section-inner { display: flow-root; }
+.page-canvas.is-exporting *, .page-canvas.is-exporting *::before, .page-canvas.is-exporting *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Typography is centralized in the v5 document typography block below. */
+
+
+/* 이미지: 제목/설명/이미지/하단텍스트 간격을 margin이 아니라 grid gap으로 고정합니다. */
+.image-section-flow {
+  display: grid;
+  gap: calc(var(--gap) * 1.35);
+  align-items: start;
+}
+.image-section-flow .section-heading { margin-bottom: 0; }
+.image-section-flow.is-full-layout > .section-inner { width: min(var(--section-width), calc(100% - 72px)); }
+.posting-image-group {
+  position: relative;
+  width: var(--image-width, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--gap);
+  align-items: start;
+}
+.posting-image-group.is-split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.image-section-flow.is-full-layout > .posting-image-group { max-width: 960px; }
+.posting-image-frame.is-auto { min-height: 0; }
+
+/* Inspector typography controls */
+.typography-field {
+  margin: -3px 0 12px;
+  border: 1px solid #e8e8ed;
+  border-radius: 9px;
+  background: #fbfbfd;
+  overflow: hidden;
+}
+.typography-field > summary {
+  min-height: 34px;
+  padding: 0 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+  color: #66636c;
+  font-size: 9px;
+  font-weight: 800;
+}
+.typography-field > summary::-webkit-details-marker { display: none; }
+.typography-field > summary small { color: #ff2e98; font-size: 8px; font-weight: 800; }
+.typography-field[open] > summary { border-bottom: 1px solid #ececf0; background: #fff; }
+.typography-field-body { padding: 10px 9px 1px; }
+
+
+
+/* ===== v4 section customization / text wrapping ===== */
+/* ===== NW AX Square Studio v6: Visual Editor document system ===== */
+
+/* 모든 텍스트 요소는 가용 영역 100%를 사용합니다. */
+.markdown,
+.markdown > *,
+.section-heading,
+.editable-element,
+.section-frame-body,
+.faq-copy {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* 동적 typography 값은 wrapper의 CSS Custom Property로만 전달됩니다. */
+.editable-element {
+  position: relative;
+  color: var(--element-color, inherit);
+  font-size: var(--element-font-size, inherit);
+  line-height: var(--element-line-height, inherit);
+  font-weight: var(--element-font-weight, inherit);
+  text-align: var(--element-text-align, inherit);
+  margin-top: var(--element-margin-top, 0);
+  margin-bottom: var(--element-margin-bottom, 0);
+  padding: var(--element-padding-y, 0) var(--element-padding-x, 0);
+  border: var(--element-border-width, 0px) solid var(--element-border-color, transparent);
+  border-radius: var(--element-border-radius, 0);
+  background: var(--element-background, transparent);
+}
+.editable-block { display: block; }
+.editable-body-element { display: block; }
+
+/* Markdown 단계는 모든 텍스트 요소에서 동일한 비율 규칙을 사용합니다. */
+.markdown { color: inherit; font-size: 1em; line-height: inherit; text-align: inherit; }
+.markdown p, .markdown li { font-size: 1em; line-height: inherit; font-weight: var(--element-font-weight, inherit); white-space: pre-line; }
+.markdown h1, .markdown h2, .markdown h3 { margin: 0; line-height: inherit; white-space: pre-line; }
+.markdown h1 { font-size: 1.5em; }
+.markdown h2 { font-size: 1.25em; }
+.markdown h3 { font-size: 1.1em; }
+.markdown p { margin: 0; }
+.markdown > * + * { margin-top: .45em; }
+
+/* 제목 클래스는 base size를 덮지 않고 spacing/letter-spacing만 담당합니다. */
+.md-section-heading, .md-hero-title, .md-card-title, .md-compare-title, .md-faq-question, .md-cta-title {
+  font-size: 1em;
+  line-height: inherit;
+  letter-spacing: -.04em;
+}
+.md-section-heading > :first-child,
+.md-hero-title > :first-child,
+.md-card-title > :first-child,
+.md-compare-title > :first-child,
+.md-faq-question > :first-child,
+.md-cta-title > :first-child { margin-top: 0; }
+.md-section-description, .md-hero-description, .md-card-description, .image-caption {
+  font-size: 1em;
+  line-height: inherit;
+  color: inherit;
+}
+.section-heading .editable-element + .editable-element { margin-top: 0; }
+
+/* 섹션 공통 프레임 */
+.section-frame {
+  position: relative;
+  overflow: visible;
+  color: var(--theme-text);
+  background-color: var(--section-background, var(--theme-bg));
+  background-image: var(--section-background-image, none);
+  background-size: cover;
+  background-position: center;
+}
+.section-frame-inner { position: relative; z-index: 2; }
+.section-background-overlay {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(90deg, rgba(15,14,18,.78), rgba(15,14,18,.54) 56%, rgba(15,14,18,.30));
+}
+.section-frame.has-background-image { color: #fff; }
+.section-frame.has-background-image .section-category { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.2); }
+.section-frame-body { position: relative; z-index: 2; }
+
+/* 공통 카테고리/버튼. 버튼은 SectionFrame DOM에서 항상 마지막 요소입니다. */
+.common-category-wrap { color: var(--element-color, var(--theme-primary)); }
+.section-category {
+  width: fit-content; min-height: 28px; padding: 6px 12px; display: inline-flex; align-items: center;
+  border: 0; border-radius: 999px;
+  background: var(--theme-primary-soft);
+  color: var(--element-color, var(--theme-primary));
+  font-size: 1em; line-height: inherit; font-weight: var(--element-font-weight, var(--accent-weight)); letter-spacing: .05em;
+}
+.common-button-wrap { color: var(--element-color, #fff); }
+.section-button {
+  width: fit-content; min-height: 46px; padding: 0 20px; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  border-radius: 11px; background: var(--theme-primary); color: var(--element-color, #fff); font-size: 1em; line-height: inherit; font-weight: var(--element-font-weight, var(--heading-weight));
+  box-shadow: 0 8px 22px var(--theme-primary-soft);
+}
+.section-footer-text { color: var(--element-color, inherit); }
+
+/* Hero: 좌/우 이미지 배치 */
+.hero-section {
+  min-height: 490px;
+  position: relative;
+  display: block;
+  padding: var(--section-padding-top, var(--page-padding-top)) 0 var(--section-padding-bottom, var(--page-padding-bottom));
+  color: var(--theme-text);
+  background-color: var(--section-background, var(--theme-bg));
+  background-image: var(--section-background-image, none);
+  background-size: cover;
+  background-position: center;
+}
+.hero-content-layout { width: 100%; display: grid; align-items: center; gap: calc(var(--gap) * 2); }
+.hero-content-layout.is-text-only { grid-template-columns: minmax(0, 1fr); }
+.hero-content-layout.is-text-left-image-right { grid-template-columns: minmax(0, var(--hero-first-ratio, 55fr)) minmax(0, var(--hero-second-ratio, 45fr)); }
+.hero-content-layout.is-image-left-text-right { grid-template-columns: minmax(0, var(--hero-first-ratio, 45fr)) minmax(0, var(--hero-second-ratio, 55fr)); }
+.hero-content-layout.is-image-left-text-right .hero-copy-column { grid-column: 2; }
+.hero-content-layout.is-image-left-text-right .hero-media-element { grid-column: 1; grid-row: 1; }
+.hero-copy-column { width: 100%; min-width: 0; }
+.hero-copy-column .section-heading { margin-bottom: 0; }
+.hero-media-element { min-width: 0; position: relative; }
+.hero-content-image-frame {
+  width: 100%; min-height: 280px; aspect-ratio: 4 / 3; overflow: hidden;
+  border: 0; border-radius: calc(var(--card-radius) + 4px);
+  background: transparent; box-shadow: none;
+}
+.hero-content-image-frame img { width: 100%; height: 100%; display: block; object-fit: var(--hero-content-fit, cover); }
+.hero-content-image-empty { width: 100%; height: 100%; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 1px dashed rgba(115,112,122,.22); border-radius: inherit; background: color-mix(in srgb, var(--theme-surface) 70%, transparent); color: var(--theme-muted); }
+
+/* Before / After 개별 카드 배경은 .before-after-card의 --compare-card-background가 담당합니다. */
+.before-after-card-shell { height: 100%; }
+.before-after-card-shell > .before-after-card { height: 100%; }
+
+/* Image full width는 SectionInner 밖으로 시각적으로 확장합니다. */
+
+/* CTA는 공통 프레임을 사용하며 버튼은 하단에 유지합니다. */
+.cta-section .section-frame-inner { padding: 38px 44px; border: 0; border-radius: calc(var(--card-radius) + 4px); background: color-mix(in srgb, var(--section-background) 92%, white 8%); }
+.cta-divider-line { width: 100%; height: 1px; background: var(--theme-primary-soft); }
+
+/* Preview element selection / quick editor */
+.preview-text-toolbar {
+  position: absolute; right: 0; top: -38px; z-index: 55; height: 32px; padding: 4px 5px;
+  display: flex; align-items: center; gap: 4px; border: 1px solid #dedee5; border-radius: 9px;
+  background: rgba(255,255,255,.98); color: #49464f; box-shadow: 0 9px 24px rgba(22,20,28,.16);
+  font-family: 'Pretendard Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 9px; line-height: 1; text-align: left; white-space: nowrap;
+}
+.preview-text-toolbar-label { max-width: 66px; overflow: hidden; text-overflow: ellipsis; font-weight: 800; color: #69666f; }
+.preview-text-toolbar button { width: 23px; height: 23px; display: grid; place-items: center; border-radius: 6px; background: #f4f4f7; color: #65626b; cursor: pointer; }
+.preview-font-size-input { width: 42px; height: 23px; border: 1px solid #e1e1e6; border-radius: 6px; text-align: center; font-size: 9px; outline: 0; }
+.preview-color-input { width: 23px; height: 23px; padding: 2px; border: 1px solid #e1e1e6; border-radius: 6px; overflow: hidden; background: #fff; }
+.preview-color-input input { width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; }
+.page-canvas.is-exporting .preview-text-toolbar { display: none !important; }
+
+/* Inspector element accordion */
+.element-panel { margin: 0 0 8px; overflow: hidden; scroll-margin-top: 12px; border: 1px solid #e8e8ed; border-radius: 10px; background: #fbfbfd; }
+.element-panel-toggle { width: 100%; min-height: 38px; padding: 0 10px; display: flex; align-items: center; justify-content: space-between; background: #fff; color: #57545d; font-size: 10px; font-weight: 800; cursor: pointer; }
+.element-panel-toggle svg { transition: transform .15s ease; color: #aaa7af; }
+.element-panel-toggle svg.is-open { transform: rotate(180deg); }
+.element-panel-body { padding: 11px 10px 3px; border-top: 1px solid #ededf1; }
+.typography-field-standalone { padding: 0; }
+.color-control-with-reset { grid-template-columns: 32px minmax(0,1fr) 28px; }
+.mini-reset-button { width: 28px; height: 30px; display: grid; place-items: center; border-radius: 7px; background: #f5f5f7; color: #77747d; cursor: pointer; }
+.visibility-toggle-group { margin-bottom: 18px; padding: 4px 10px; border: 1px solid #e8e8ed; border-radius: 10px; background: #fbfbfd; }
+
+/* Theme token based section background selector */
+.background-token-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px; }
+.background-token-button { min-height: 42px; padding: 6px 7px; display: flex; align-items: center; gap: 7px; border: 1px solid #e5e5ea; border-radius: 8px; background: #fff; color: #68656e; font-size: 8px; font-weight: 800; text-align: left; cursor: pointer; }
+.background-token-button.is-active { border-color: #ff8fc7; background: #fff6fa; color: #e62b83; }
+.background-token-swatch { width: 22px; height: 22px; flex: 0 0 22px; border: 1px solid rgba(20,20,25,.11); border-radius: 6px; }
+
+/* History controls */
+.preview-toolbar-actions { display: flex; align-items: center; gap: 10px; }
+.history-control { display: flex; gap: 4px; }
+.history-control button { width: 27px; height: 27px; display: grid; place-items: center; border-radius: 7px; border: 1px solid #dedfe5; background: #fff; color: #5c5961; cursor: pointer; }
+.history-control button:disabled { opacity: .35; cursor: default; }
+
+/* Range slider: 채운 영역/비활성 영역/thumb를 global CSS에서 일관되게 관리 */
+.control-range {
+  width: 100%;
+  height: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+.control-range::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    #ff8fc7 0%,
+    #ff8fc7 var(--range-progress, 0%),
+    #ffe5f2 var(--range-progress, 0%),
+    #ffe5f2 100%
+  );
+}
+.control-range::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  margin-top: -6px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: 50%;
+  background: #ff8fc7;
+  box-shadow: 0 1px 4px rgba(90, 37, 64, .18);
+}
+.control-range::-moz-range-track { height: 4px; border-radius: 999px; background: #ffe5f2; }
+.control-range::-moz-range-progress { height: 4px; border-radius: 999px; background: #ff8fc7; }
+.control-range::-moz-range-thumb { width: 16px; height: 16px; border: 0; border-radius: 50%; background: #ff8fc7; }
+
+
+
+/* ===== NW AX Square Studio v7: Inspector navigation / style authority / media resize ===== */
+
+/* 선택 상태: 흐릿한 dashed outline 대신 가벼운 면 강조 + 좌측 accent로 표시합니다. */
+.preview-section.is-selected::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  z-index: 32;
+  width: 4px;
+  height: 30px;
+  border-radius: 0 999px 999px 0;
+  background: rgba(255, 91, 167, .82);
+  pointer-events: none;
+}
+.editable-element.is-element-selected {
+  background: rgba(255, 46, 152, .055);
+  border-radius: 7px;
+  box-shadow: inset 3px 0 0 rgba(255, 46, 152, .72);
+}
+.editable-element.is-element-selected::after { content: none; display: none; }
+.page-canvas.is-exporting .preview-section.is-selected::before,
+.page-canvas.is-exporting .editable-element.is-element-selected { box-shadow: none; background: transparent; }
+.page-canvas.is-exporting .preview-section.is-selected::before { display: none; }
+
+/* Inspector: 콘텐츠 요소 / 섹션 스타일 / 표시 설정을 서로 다른 시각 그룹으로 구분합니다. */
+.inspector-group {
+  margin: 14px 0 0;
+  padding: 10px;
+  border: 1px solid #e8e8ed;
+  border-radius: 13px;
+}
+.inspector-elements-group { background: #fbfbfd; }
+.inspector-section-style-group { background: #f7f5fa; border-color: #e5dfeb; }
+.inspector-visibility-group { background: #fafbfd; }
+.inspector-group-heading {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  margin-bottom: 10px;
+}
+.inspector-group-icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #e6e5ea;
+  color: #ff4b9f;
+}
+.inspector-section-style-group .inspector-group-icon { color: #7f6a91; background: #fcfaff; border-color: #e5ddec; }
+.inspector-group-heading strong { display: block; color: #48464e; font-size: 10px; line-height: 1.3; }
+.inspector-group-heading small { display: block; margin-top: 3px; color: #96939c; font-size: 8px; line-height: 1.45; }
+.inspector-group .element-panel:last-child { margin-bottom: 0; }
+.inspector-group .visibility-toggle-group { margin-bottom: 0; background: #fff; }
+.element-panel.tone-section { border-color: #e2dce8; background: #faf8fc; }
+.element-panel.tone-section .element-panel-toggle { background: #fbf9fd; color: #665b70; }
+.element-panel.is-active { border-color: #ff97c7; box-shadow: none; }
+.element-panel.tone-section.is-active { border-color: #a997b7; }
+.element-panel[data-active="true"] .element-panel-toggle { background: #fff7fb; }
+.element-panel.tone-section[data-active="true"] .element-panel-toggle { background: #f4eff8; }
+
+/* Typography authority: Element의 CSS 변수 → Markdown → 자식 순서로 단방향 상속합니다. */
+.editable-element .markdown,
+.editable-element .markdown p,
+.editable-element .markdown li,
+.editable-element .markdown em,
+.editable-element .markdown blockquote,
+.editable-element .markdown a,
+.editable-element .markdown code,
+.editable-element .markdown td,
+.editable-element .markdown th {
+  color: inherit;
+}
+.markdown h1,
+.markdown h2,
+.markdown h3 { font-weight: var(--element-font-weight, var(--heading-weight)); color: inherit; }
+.markdown strong { color: inherit; font-weight: 700; }
+.markdown a { color: inherit; text-decoration-color: currentColor; }
+
+/* 명시적인 component color가 Element 글자색을 덮지 않도록 모두 CSS 변수 fallback으로 통일합니다. */
+.section-frame.has-background-image .common-category-wrap,
+.section-frame.has-background-image .common-category-wrap .section-category {
+  color: var(--element-color, #fff);
+}
+.section-button .markdown,
+.section-button .markdown * { color: inherit; }
+.section-frame.has-background-image .editable-element .markdown { color: inherit; }
+.after-card .compare-label { color: var(--element-color, var(--theme-primary)); }
+.compare-label-element { width: fit-content; margin-bottom: 20px; }
+.compare-label-element .compare-label { margin-bottom: 0; }
+
+/* Preview quick toolbar */
+.preview-text-toolbar button.is-active { background: #fff0f7; color: #e72b84; box-shadow: inset 0 0 0 1px #ffc1df; }
+
+/* 오프닝 콘텐츠 이미지는 기본적으로 장식 없이 렌더링하고 필요한 장식만 토글로 켭니다. */
+.hero-content-image-size { width: 100%; max-width: 100%; margin: 0; position: relative; }
+.hero-content-image-frame.has-background { background: var(--theme-surface); }
+.hero-content-image-frame.has-shadow { box-shadow: 0 18px 42px rgba(20,18,24,.10); }
+.hero-section.has-background-image .hero-content-image-frame { border-color: rgba(255,255,255,.22); background: transparent; }
+.hero-section.has-background-image .hero-content-image-frame.has-background { background: rgba(255,255,255,.08); }
+.image-decoration-settings { margin-top: 4px; padding: 4px 8px; border: 1px solid #ececf0; border-radius: 9px; background: #fafafd; }
+
+/* 이미지 섹션 widthPercent는 contained/full 양쪽에서 동일하게 동작합니다. */
+.posting-image-group.is-canvas-full {
+  width: min(var(--image-canvas-width, 960px), 960px);
+  max-width: 960px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.media-resize-handle {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  z-index: 70;
+  width: 16px;
+  height: 48px;
+  transform: translateY(-50%);
+  border: 1px solid #ff92c5;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(52, 30, 43, .16);
+  cursor: ew-resize;
+  touch-action: none;
+}
+.media-resize-handle::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 13px;
+  width: 4px;
+  height: 20px;
+  border-left: 1px solid #e34f96;
+  border-right: 1px solid #e34f96;
+}
+.media-resize-handle:hover { background: #fff6fa; }
+body.is-resizing-media, body.is-resizing-media * { cursor: ew-resize !important; user-select: none !important; }
+.page-canvas.is-exporting .media-resize-handle { display: none !important; }
+
+/* ===== NW AX Square Studio v8: spacing / markdown / element box / hero column resize ===== */
+/* Element style의 최종 authority. 이후 component selector가 color/line-height를 덮지 않도록 여기서 명시합니다. */
+.editable-element {
+  color: var(--element-color, inherit);
+  line-height: var(--element-line-height, inherit);
+}
+.editable-element .markdown,
+.editable-element .markdown * { color: inherit; }
+/* 부분 색상 marker는 inline style이 Element 전체 색상보다 우선합니다. */
+.markdown-inline-color { font: inherit; color: var(--inline-color) !important; }
+
+/* Markdown soft-break: Enter 한 번을 실제 줄바꿈으로 표시합니다. */
+.markdown p,
+.markdown li,
+.markdown h1,
+.markdown h2,
+.markdown h3 { white-space: pre-line; }
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown p { line-height: inherit; }
+.markdown > * { margin-bottom: 0; }
+.markdown > * + * { margin-top: .45em; }
+
+/* Element의 background/stroke는 wrapper에서 일관되게 적용합니다. */
+.common-category-wrap,
+.common-button-wrap { background: transparent; border-width: 0; border-color: transparent; padding: 0; }
+.section-category {
+  background: var(--element-background, var(--theme-primary-soft));
+  border-width: var(--element-border-width, 0px);
+  border-style: solid;
+  border-color: var(--element-border-color, var(--theme-primary-soft));
+  border-radius: var(--element-border-radius, 999px);
+  padding: var(--element-padding-y, 6px) var(--element-padding-x, 12px);
+}
+.section-button {
+  background: var(--element-background, var(--theme-primary));
+  border-width: var(--element-border-width, 0px);
+  border-style: solid;
+  border-color: var(--element-border-color, transparent);
+  border-radius: var(--element-border-radius, 11px);
+  padding-left: max(20px, var(--element-padding-x, 0px));
+  padding-right: max(20px, var(--element-padding-x, 0px));
+}
+.section-footer-text { color: var(--element-color, inherit); }
+
+.field-subheading { margin: 10px 0 7px; padding-top: 9px; border-top: 1px solid #efeff2; color: #6c6972; font-size: 8px; font-weight: 900; letter-spacing: .05em; }
+.field-subheading:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.field-note { margin: -2px 0 8px; padding: 7px 8px; border-radius: 7px; background: #f8f8fa; color: #8d8992; font-size: 8px; line-height: 1.5; }
+
+/* Hero의 이미지 자체 크기가 아니라 텍스트/이미지 column 경계를 드래그합니다. */
+.hero-content-layout { position: relative; }
+.hero-column-resize-handle {
+  position: absolute; top: 50%; z-index: 80; width: 18px; height: 72px; transform: translateY(-50%);
+  border: 1px solid #ff92c5; border-radius: 999px; background: rgba(255,255,255,.98); box-shadow: 0 5px 18px rgba(52,30,43,.16);
+  cursor: ew-resize; touch-action: none;
+}
+.hero-column-resize-handle.is-left-edge { left: -9px; }
+.hero-column-resize-handle.is-right-edge { right: -9px; }
+.hero-column-resize-handle::before,
+.hero-column-resize-handle::after { content: ''; position: absolute; top: 23px; width: 1px; height: 24px; background: #df4d94; }
+.hero-column-resize-handle::before { left: 6px; }
+.hero-column-resize-handle::after { right: 6px; }
+.page-canvas.is-exporting .hero-column-resize-handle { display: none !important; }
+
+/* v8 container element appearance */
+.guide-step.element-box-target {
+  background: var(--element-background, var(--theme-bg));
+  border-width: var(--element-border-width, 0px);
+  border-style: solid;
+  border-color: var(--element-border-color, transparent);
+  border-radius: var(--element-border-radius, var(--card-radius));
+  padding: var(--element-padding-y, calc(var(--gap) * 1.25)) var(--element-padding-x, calc(var(--gap) * 1.25));
+}
+.faq-item.element-box-target {
+  background: var(--element-background, var(--theme-bg));
+  border-width: var(--element-border-width, 0px);
+  border-style: solid;
+  border-color: var(--element-border-color, transparent);
+  border-radius: var(--element-border-radius, var(--card-radius));
+  padding: var(--element-padding-y, 22px) var(--element-padding-x, 24px);
+}
+.before-after-card-shell { background: transparent; border: 0; padding: 0; }
+.before-after-card-shell > .before-after-card {
+  background: var(--element-background, var(--compare-card-background, var(--theme-bg)));
+  border-width: var(--element-border-width, 0px);
+  border-style: solid;
+  border-color: var(--element-border-color, transparent);
+  border-radius: var(--element-border-radius, var(--card-radius));
+  padding: var(--element-padding-y, calc(var(--gap) * 1.35)) var(--element-padding-x, calc(var(--gap) * 1.35));
+}
+.posting-image-frame {
+  background: var(--element-background, var(--theme-surface));
+  border-width: var(--element-border-width, 0px);
+  border-style: solid;
+  border-color: var(--element-border-color, transparent);
+  border-radius: var(--element-border-radius, var(--card-radius));
+}
+.posting-table-wrap {
+  background: var(--element-background, var(--theme-bg));
+  border-width: var(--element-border-width, 0px);
+  border-style: solid;
+  border-color: var(--element-border-color, transparent);
+  border-radius: var(--element-border-radius, var(--card-radius));
+}
+
+/* ===== v8.1 final cascade fixes ===== */
+/* SectionHeading 안에서도 element별 위/아래 간격 값을 그대로 사용합니다. */
+.section-heading .editable-element + .editable-element {
+  margin-top: var(--element-margin-top, 0);
+}
+.compare-label-element {
+  margin-bottom: var(--element-margin-bottom, 18px);
+}
+
+/* line-height는 모든 Markdown text node에서 Element 값만 상속합니다. */
+.editable-element > .markdown,
+.editable-element > .markdown p,
+.editable-element > .markdown li,
+.editable-element > .markdown h1,
+.editable-element > .markdown h2,
+.editable-element > .markdown h3,
+.editable-element > .markdown strong,
+.editable-element > .markdown em,
+.editable-element > .markdown a,
+.editable-element > .markdown span {
+  line-height: inherit;
+}
+
+/* Element 전체 색상은 wrapper가 authority이며 부분 색상 span의 inline color만 예외입니다. */
+.section-footer-text,
+.section-footer-text .markdown,
+.section-footer-text .markdown p,
+.section-footer-text .markdown li,
+.common-button-wrap,
+.common-button-wrap .section-button,
+.common-button-wrap .markdown,
+.common-category-wrap,
+.common-category-wrap .section-category {
+  color: var(--element-color, inherit);
+}
+
+/* 오프닝 콘텐츠 이미지는 배정된 column 전체를 사용하고 box 설정은 wrapper가 담당합니다. */
+.hero-media-element {
+  min-width: 0;
+  background: var(--element-background, transparent);
+  border-color: var(--element-border-color, transparent);
+  border-width: var(--element-border-width, 0px);
+  border-style: solid;
+  border-radius: var(--element-border-radius, 20px);
+  padding: var(--element-padding-y, 0) var(--element-padding-x, 0);
+}
+.hero-media-element .hero-content-image-frame {
+  border: 0;
+  background: transparent;
+  border-radius: inherit;
+}
+
+/* CTA의 고정 박스 디자인을 제거해 섹션/Element 설정과 충돌하지 않게 합니다. */
+.cta-section .section-frame-inner {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+
+/* ===== NW AX Square Studio v9: friendlier Markdown colors / theme-safe defaults ===== */
+/* Markdown block spacing is intentionally fixed. Users only control line-height and element spacing. */
+.markdown > * + * { margin-top: .45em; }
+
+/* Inline partial color UX */
+.markdown-color-editor {
+  margin-top: 7px;
+  padding: 9px;
+  border: 1px solid #e8e8ed;
+  border-radius: 10px;
+  background: #fafafd;
+}
+.markdown-color-editor-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.markdown-color-editor-head strong {
+  display: block;
+  color: #55525b;
+  font-size: 9px;
+  font-weight: 800;
+}
+.markdown-color-editor-head small {
+  display: block;
+  margin-top: 3px;
+  color: #9b98a1;
+  font-size: 7.5px;
+  line-height: 1.4;
+}
+.markdown-color-count {
+  flex: 0 0 auto;
+  padding: 3px 6px;
+  border-radius: 999px;
+  background: #f0f0f4;
+  color: #8b8891;
+  font-size: 7px;
+  font-weight: 800;
+}
+.markdown-color-actions {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) auto;
+  gap: 6px;
+  align-items: center;
+}
+.markdown-color-picker {
+  height: 30px;
+  padding: 3px 7px 3px 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #dedee4;
+  border-radius: 7px;
+  background: #fff;
+  color: #69666f;
+  font-size: 7px;
+  font-weight: 700;
+}
+.markdown-color-picker input {
+  width: 22px;
+  height: 22px;
+  padding: 1px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.markdown-color-actions button {
+  min-height: 30px;
+  padding: 0 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 7.5px;
+  font-weight: 800;
+}
+.markdown-color-apply { background: #fff0f7; color: #d72c7d; }
+.markdown-color-remove { background: #f1f1f4; color: #77747d; }
+.markdown-color-message {
+  margin-top: 7px;
+  padding: 6px 7px;
+  border-radius: 7px;
+  background: #fff;
+  color: #77747d;
+  font-size: 7.5px;
+  line-height: 1.45;
+}
+.markdown-color-list {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #ececf0;
+  display: grid;
+  gap: 5px;
+}
+.markdown-color-list-title { color: #8d8992; font-size: 7px; font-weight: 800; }
+.markdown-color-item {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 26px 34px;
+  gap: 5px;
+  align-items: center;
+}
+.markdown-color-preview {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #5d5a63;
+  font-size: 8px;
+}
+.markdown-color-item input[type="color"] {
+  width: 26px;
+  height: 24px;
+  padding: 2px;
+  border: 1px solid #dedee4;
+  border-radius: 6px;
+  background: #fff;
+}
+.markdown-color-item button {
+  height: 24px;
+  border-radius: 6px;
+  background: #f2f2f5;
+  color: #7e7b84;
+  font-size: 7px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* New sections inherit the active theme instead of carrying LG U+ hard-coded card colors. */
+.guide-step.element-box-target,
+.faq-item.element-box-target,
+.posting-table-wrap {
+  background-color: var(--element-background, var(--theme-bg));
+}
+.before-after-card-shell > .before-card {
+  background: var(--element-background, var(--compare-card-background, var(--theme-bg)));
+  border-color: var(--element-border-color, transparent);
+}
+.before-after-card-shell > .after-card {
+  background: var(--element-background, var(--compare-card-background, var(--theme-primary-soft-2)));
+  border-color: var(--element-border-color, var(--theme-primary-soft));
+}
+
+
+/* ===== NW AX Square Studio v10: explicit stroke ownership / media clipping ===== */
+/*
+ * Posting content의 Stroke 기본값은 0입니다.
+ * Stroke는 ElementBoxField(카드/이미지/표 등) 또는 allowStroke를 준 요소에서 사용자가 켠 경우에만 보입니다.
+ * 과거 component selector에 남아 있던 1px fallback은 이 final cascade에서 모두 제거합니다.
+ */
+.guide-step.element-box-target,
+.faq-item.element-box-target,
+.before-after-card-shell > .before-after-card,
+.posting-table-wrap,
+.posting-image-frame,
+.section-category,
+.section-button,
+.hero-media-element {
+  border-width: var(--element-border-width, 0px);
+  border-style: solid;
+  border-color: var(--element-border-color, transparent);
+}
+
+/* 카드/컨테이너는 테마 배경은 유지하되 Stroke 자체는 자동으로 만들지 않습니다. */
+.guide-step.element-box-target,
+.faq-item.element-box-target,
+.before-after-card-shell > .before-after-card,
+.posting-table-wrap {
+  box-sizing: border-box;
+}
+
+/* 이미지용 EditableElement wrapper는 선택 툴바를 위해 overflow를 막지 않습니다.
+   실제 clipping/stroke는 내부 frame이 책임집니다. */
+.image-box-element,
+.hero-media-element {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.posting-image-frame,
+.hero-content-image-frame {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  isolation: isolate;
+  border: 0;
+  border-radius: var(--element-border-radius, var(--card-radius));
+  background: var(--element-background, transparent);
+}
+
+.posting-image-frame > img,
+.hero-content-image-frame > img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+}
+
+/* Stroke overlay를 이미지보다 위에 그려 이미지가 테두리를 덮거나 모서리 밖으로 삐져나오지 않게 합니다. */
+.posting-image-frame::after,
+.hero-content-image-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: var(--element-border-width, 0px) solid var(--element-border-color, transparent);
+  border-radius: inherit;
+}
+
+.posting-image-frame .posting-image-empty,
+.hero-content-image-frame .hero-content-image-empty {
+  z-index: 1;
+  border-radius: inherit;
+}
+
+/* Hero image decoration은 opt-in. Shadow도 사용자가 켠 경우에만 유지합니다. */
+.hero-content-image-frame.has-shadow {
+  box-shadow: 0 18px 42px rgba(20,18,24,.10);
+}
+
+/* Table의 바깥 Stroke는 opt-in이지만 셀 구분선은 표 구조 자체이므로 유지합니다. */
+.posting-table-wrap { border-radius: var(--element-border-radius, var(--card-radius)); }
+
+/* Export에서도 media clipping/stroke 결과는 Preview와 동일합니다. */
+.page-canvas.is-exporting .posting-image-frame::after,
+.page-canvas.is-exporting .hero-content-image-frame::after {
+  display: block;
+}
+
+/* =========================================================
+   STUDIO DIRECTORY + AUTO SAVE UI
+   ========================================================= */
+.studio-directory {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background: #f5f6f8;
+  color: #1d1c21;
+}
+
+.studio-directory-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 28px;
+  border-bottom: 1px solid #e3e4e8;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(14px);
+}
+
+.studio-directory-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.studio-directory-mark {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #111116;
+  color: #fff;
+}
+
+.studio-directory-brand > div:last-child {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.08;
+}
+
+.studio-directory-brand strong {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.studio-directory-brand span {
+  margin-top: 5px;
+  color: #8b8991;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.studio-directory-back,
+.studio-editor-back {
+  cursor: pointer;
+  color: #5e5b64;
+  background: #f1f1f4;
+  transition: .15s ease;
+}
+
+.studio-directory-back {
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.studio-directory-back:hover,
+.studio-editor-back:hover {
+  background: #e8e8ed;
+  color: #1d1c21;
+}
+
+.studio-directory-main {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 64px 0 80px;
+}
+
+.studio-directory-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding-bottom: 34px;
+  border-bottom: 1px solid #dedfe4;
+}
+
+.studio-directory-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #e6007e;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.studio-directory-hero h1 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.3;
+  letter-spacing: -.035em;
+}
+
+.studio-directory-hero p {
+  margin: 12px 0 0;
+  color: #77747d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.studio-create-button {
+  height: 42px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 17px;
+  border-radius: 11px;
+  background: #e6007e;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 7px 18px rgba(230,0,126,.18);
+}
+
+.studio-create-button:hover { background: #c9006e; }
+.studio-create-button:disabled { opacity: .55; cursor: default; }
+
+.studio-post-section { margin-top: 34px; }
+.studio-post-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+}
+.studio-post-section-heading h2 { margin: 0; font-size: 16px; }
+.studio-post-section-heading span {
+  min-width: 24px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: #e9e9ed;
+  color: #77747d;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.studio-post-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.studio-post-card {
+  position: relative;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e0e1e5 !important;
+  border-radius: 14px;
+  background: #fff;
+  text-align: left;
+  box-shadow: 0 2px 7px rgba(20,20,24,.025);
+  transition: .16s ease;
+}
+
+.studio-post-card:hover {
+  transform: translateY(-3px);
+  border-color: #ffd1e9 !important;
+  box-shadow: 0 10px 26px rgba(30,28,34,.08);
+}
+
+.studio-post-card-open {
+  width: 100%;
+  display: block;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.studio-post-card-open:disabled {
+  cursor: wait;
+  opacity: .72;
+}
+
+.studio-post-card-preview {
+  height: 138px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #fff0f7, #f4f4f8);
+  color: #e6007e;
+}
+
+.studio-post-card-body {
+  min-width: 0;
+  display: grid;
+  gap: 7px;
+  padding: 14px 64px 15px 15px;
+}
+
+.studio-post-card-body strong {
+  overflow: hidden;
+  color: #242229;
+  font-size: 12.5px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.studio-post-card-body span {
+  color: #96939b;
+  font-size: 9.5px;
+}
+
+.studio-post-delete-button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 9px;
+  border-radius: 8px;
+  background: #f6f6f8;
+  color: #89868f;
+  cursor: pointer;
+  font-size: 9.5px;
+  font-weight: 800;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity .14s ease, transform .14s ease, background .14s ease, color .14s ease;
+}
+
+.studio-post-card:hover .studio-post-delete-button,
+.studio-post-delete-button:focus-visible,
+.studio-post-delete-button:disabled {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.studio-post-delete-button:hover:not(:disabled) {
+  background: #fff0f2;
+  color: #c92f4f;
+}
+
+.studio-post-delete-button:disabled {
+  cursor: wait;
+  color: #aaa7ae;
+}
+
+.studio-directory-state,
+.studio-empty-state {
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #d9dae0;
+  border-radius: 16px;
+  background: rgba(255,255,255,.7);
+  color: #88858d;
+}
+
+.studio-empty-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 17px;
+  border-radius: 17px;
+  background: #fff0f7;
+  color: #e6007e;
+}
+
+.studio-empty-state strong { color: #29272d; font-size: 14px; }
+.studio-empty-state p { margin: 8px 0 18px; font-size: 11px; }
+.studio-empty-state button {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 13px;
+  border-radius: 9px;
+  background: #e6007e;
+  color: #fff;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.studio-editor-back {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+}
+
+.studio-save-state {
+  height: 28px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 9px;
+  border-radius: 8px;
+  font-size: 9.5px;
+  font-weight: 800;
+}
+
+.studio-save-state--saved { background: #edf8f1; color: #28814c; }
+.studio-save-state--saving { background: #f3f3f6; color: #78757e; }
+.studio-save-state--error { background: #fff0f0; color: #c43737; }
+
+@media (max-width: 1050px) {
+  .studio-post-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .studio-save-state { display: none; }
+}
+
+@media (max-width: 760px) {
+  .posting-builder-root { min-height: 100dvh; }
+  .studio-directory-main { width: calc(100% - 36px); padding-top: 40px; }
+  .studio-directory-header { padding: 0 18px; }
+  .studio-directory-hero { align-items: flex-start; flex-direction: column; }
+  .studio-post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .studio-post-delete-button { opacity: 1; transform: none; }
+  .studio-post-delete-button span { display: none; }
+  .studio-post-card-body { padding-right: 48px; }
+  .studio-directory-back { display: none; }
+}

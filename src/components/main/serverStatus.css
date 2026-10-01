@@ -1,0 +1,324 @@
+/* React 테스트용 운영기 사용 현황 */
+.server-status-page {
+  min-height: 100vh;
+  background: #f7f7f9;
+}
+
+.server-status-page-top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #ececf0;
+  backdrop-filter: blur(12px);
+}
+
+.server-status-page-top-inner {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.server-status-back {
+  color: #4b4d55;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.server-status-back:hover {
+  color: #e6007e;
+}
+
+.server-status-page-brand {
+  color: #8b8e96;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.server-status-section {
+  padding: 16px 0 42px;
+}
+
+/*
+ * 운영기 현황은 한 화면에 최대한 많이 보여주는 것이 우선이므로
+ * 전역 .page-container(기존 1100px)보다 넓게 사용합니다.
+ */
+.page-container.server-status-container {
+  width: min(1500px, calc(100% - 28px));
+  max-width: none;
+  margin: 0 auto;
+}
+
+.server-status-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+/* =========================================================
+   우측 EMS / RDP 전환 버튼
+   ========================================================= */
+
+.server-status-view-switch {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: #eceef1;
+}
+
+.server-status-view-button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #6d7079;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition:
+    background .15s ease,
+    color .15s ease,
+    box-shadow .15s ease;
+}
+
+.server-status-view-button:hover {
+  color: #25262b;
+}
+
+.server-status-view-button--active {
+  background: #fff;
+  color: #e6007e;
+  box-shadow: 0 2px 8px rgba(27, 28, 33, .09);
+}
+
+.server-status-group-heading {
+  margin-bottom: 10px;
+}
+
+.server-status-group-heading span {
+  display: block;
+  margin-bottom: 4px;
+  color: #e6007e;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.server-status-group-heading h2 {
+  margin: 0;
+  color: #1f2025;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+/* =========================================================
+   EMS
+   ========================================================= */
+
+.server-status-ems-zone-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.server-status-ems-zone {
+  min-width: 0;
+  padding: 12px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(24, 25, 31, .055);
+}
+
+.server-status-ems-zone:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: calc(50% - 8px);
+  justify-self: center;
+}
+
+.server-status-ems-zone > h3 {
+  margin: 0 0 10px;
+  color: #292a30;
+  font-size: 13px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.server-status-ems-rms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 8px;
+}
+
+/* =========================================================
+   RDP
+   ========================================================= */
+
+.server-status-rdp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.server-status-rdp-grid > .server-status-rms-board:last-child:nth-child(3n + 1) {
+  grid-column: 2;
+}
+
+.server-status-rms-board {
+  min-width: 0;
+}
+
+.server-status-rms-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 5px;
+  padding: 3px 8px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #eceef1;
+  color: #454850;
+  font-size: 10.5px;
+  font-weight: 900;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* RMS 내부 배치: EMS 3열 / RDP 5열 */
+.server-status-slot-grid {
+  display: grid;
+  gap: 4px;
+}
+
+.server-status-slot-grid--ems {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.server-status-slot-grid--rdp {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.server-status-slot {
+  min-width: 0;
+  min-height: 58px;
+  padding: 6px 7px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/*
+ * slot_index에 해당하는 List 행이 없는 위치.
+ * 카드 자체를 그리지 않고 grid 자리만 유지합니다.
+ */
+.server-status-slot--placeholder {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.server-status-slot--available {
+  background: #f0f1f3;
+}
+
+.server-status-slot--using {
+  background: #fff0f7;
+  box-shadow: inset 0 0 0 1px rgba(230, 0, 126, .18);
+}
+
+.server-status-slot-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.server-status-slot-head strong {
+  min-width: 0;
+  overflow: hidden;
+  color: #292a30;
+  font-size: 14px;
+  font-weight: 900;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.server-status-state {
+  flex: 0 0 auto;
+  padding: 2px 4px;
+  border-radius: 999px;
+  font-size: 8px;
+  font-weight: 900;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.server-status-state--using {
+  background: #e6007e;
+  color: #fff;
+}
+
+.server-status-state--available {
+  background: #dfe1e5;
+  color: #747780;
+}
+
+.server-status-user {
+  display: grid;
+  gap: 2px;
+  margin-top: 5px;
+}
+
+.server-status-user strong {
+  overflow: hidden;
+  color: #202126;
+  font-size: 14px;
+  font-weight: 900;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.server-status-user span {
+  overflow: hidden;
+  color: #747780;
+  font-size: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 1180px) {
+  .server-status-toolbar {
+    justify-content: flex-end;
+  }
+
+  .server-status-ems-zone-grid,
+  .server-status-rdp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .server-status-ems-zone:last-child:nth-child(odd),
+  .server-status-rdp-grid > .server-status-rms-board:last-child:nth-child(3n + 1) {
+    width: auto;
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .server-status-view-switch {
+    width: 100%;
+  }
+
+  .server-status-view-button {
+    flex: 1;
+    padding: 0 8px;
+  }
+
+  .server-status-ems-rms-grid {
+    grid-template-columns: 1fr;
+  }
+}

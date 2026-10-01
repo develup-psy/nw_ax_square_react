@@ -1,0 +1,38 @@
+{
+
+  "compilerOptions": {
+    "target": "es5",
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "webpack-env"
+    ],
+    "lib": [
+      "es5",
+      "dom",
+      "es2015.collection",
+      "es2015.promise"
+    ]
+  },
+
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "vite.config.ts"
+  ]
+
+}
